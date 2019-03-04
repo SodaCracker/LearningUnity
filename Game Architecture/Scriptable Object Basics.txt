@@ -1,0 +1,41 @@
+Primer
+  Serilizable Unity Class
+  Similar to MonoBehaviour, no Transform
+  Saved as .asset file
+Simple Use Cases
+  Game config files
+  Inventory
+  Enemy stats
+  AudioCollection
+  
+  Singleton
+    Access anything from anywhere
+    Persistent State
+    Easy to understand
+    Consistent pattern
+    Easy to "plan"
+  Singleton Problems
+    Rigid Connections / Not Modular
+    No Polymorphism
+      PlayerManager.sth (TutorialPlayerManager / DebugPlayerManager / TestingPlayerManager)
+    Not Testable
+    Dependency Nightmare
+    Single Instance!
+    
+  Solutions
+    Reduce need for global managers
+    Inversion of Control
+      Example: Dependency Injection
+      Objects are given dependencies
+      把 text 给到 UI，而不是 UI 去获取 text
+      Single responsibility principle
+      
+  Modular Data
+    Enemy Prefab Example
+      EnemyManager.Instance.MoveSpeed? 不要从每个单独的 prefab 里去找参数。
+        Hard reference
+        Dependency on manager being loaded
+      EnemyConfig ScriptableObject reference?
+        Lumps all part of the enemy stats together
+        Limits extension / modularity
+      Better?
